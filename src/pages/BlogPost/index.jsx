@@ -1,9 +1,8 @@
 import { posts } from "../Feed/data"
 import styles from './blogpost.module.css'
 import { ThumbsUpButton } from "../../components/CardPost/ThumbsUpButton"
-import { IconButton } from "../../components/IconButton"
-import { IconChat } from "../../components/icons/IconChat"
 import { Author } from "../../components/Author"
+import { ModalComment } from "../../components/ModalComment"
 import Typography from "../../components/Typography"
 import { CommentList } from "../../components/CommentList"
 import ReactMarkdown from 'react-markdown'
@@ -51,9 +50,7 @@ export const BlogPost = () => {
                             </p>
                         </div>
                         <div className={styles.action}>
-                            <IconButton>
-                                <IconChat />
-                            </IconButton>
+                            <ModalComment/>
                             <p>
                                 {post.comments.length}
                             </p>
