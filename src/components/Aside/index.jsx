@@ -46,17 +46,22 @@ export const Aside = () => {
                     </AsideLink>
                 </li>
                 <li>
-                    {isAuthenticated ? (
-                        <AsideLink href="/auth/logout">
-                            <IconLogin />
-                            Logout
-                        </AsideLink>
-                    ) : (
-                        <AsideLink href="/auth/login">
-                            <IconLogin />
-                            Login
-                        </AsideLink>
+                    {isAuthenticated && (
+                        <li>
+                            <AsideLink href="/auth/logout">
+                                <IconLogin />
+                                Logout
+                            </AsideLink>
+                        </li>
                     )}
+                    {(!isAuthenticated && (
+                        <li>
+                            <AsideLink href="/auth/login">
+                                <IconLogin />
+                                Login
+                            </AsideLink>
+                        </li>
+                    ))}
                 </li>
             </ul>
         </nav>
